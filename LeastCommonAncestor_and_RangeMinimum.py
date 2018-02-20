@@ -1,4 +1,4 @@
-"""LCA.py
+"""
 
 Range minimization and tree least common ancestor data structures
 with linear space and preprocessing time, and constant query time,
@@ -351,9 +351,6 @@ def _log2(n):
     return _integer_log_table[n]
 
 
-# if run as "python LCA.py", run tests on random data
-# and check that RangeMin's results are correct.
-
 class RandomRangeMinTest(unittest.TestCase):
     def testRangeMin(self):
         for trial in range(20):
@@ -398,7 +395,7 @@ class LCATest(unittest.TestCase):
             self.assertEqual(lca_of[p][q], v)
 
 
-class testSpeeds(unittest.TestCase):
+class TestSpeeds(unittest.TestCase):
     def testSpeeds(self):
         test_sample_size = 2 ** 15
 
@@ -412,6 +409,7 @@ class testSpeeds(unittest.TestCase):
         import time
         t0 = time.clock()
 
+        # noinspection PyTypeChecker
         lca_of = LCA(parent_of, range_min_factory=RestrictedRangeMin)
         for i in range(1, len(objects) - 1):
             lca_of(i, i + 1)
