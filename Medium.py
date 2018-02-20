@@ -23,7 +23,7 @@ D. Eppstein, May 2007.
 """
     
 import BFS,DFS
-from Graphs import isUndirected
+from GraphFunctions import is_undirected
 import unittest
 
 class MediumError(ValueError): pass
@@ -180,7 +180,7 @@ class LabeledGraphMedium(Medium):
     in a medium with the same behavior as M itself.
     """
     def __init__(self,G):
-        if not isUndirected(G):
+        if not is_undirected(G):
             raise MediumError("not an undirected graph")
         self._action = {v:{} for v in G}
         self._reverse = {}

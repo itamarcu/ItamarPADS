@@ -5,7 +5,7 @@ Kruskal's algorithm for minimum spanning trees. D. Eppstein, April 2006.
 
 import unittest
 from UnionFind import UnionFind
-from Graphs import isUndirected
+from GraphFunctions import is_undirected
 
 def MinimumSpanningTree(G):
     """
@@ -15,7 +15,7 @@ def MinimumSpanningTree(G):
     length of edge u,v, and G[u][v] should always equal G[v][u].
     The tree is returned as a list of edges.
     """
-    if not isUndirected(G):
+    if not is_undirected(G):
         raise ValueError("MinimumSpanningTree: input is not undirected")
     for u in G:
         for v in G[u]:

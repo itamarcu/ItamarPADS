@@ -6,12 +6,12 @@ D. Eppstein, July 2016.
 """
 
 import unittest
-from Graphs import isUndirected
+from GraphFunctions import is_undirected
 from BucketQueue import BucketQueue
 
 def degeneracySequence(G):
     """Generate pairs (vertex,number of later neighbors) in degeneracy order."""
-    if not isUndirected(G):
+    if not is_undirected(G):
         raise TypeError("Graph must be undirected")
     Q = BucketQueue()
     for v in G:

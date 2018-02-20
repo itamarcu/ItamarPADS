@@ -6,7 +6,7 @@ D. Eppstein, May 2004.
 
 import unittest
 from Biconnectivity import BiconnectedComponents
-import Graphs
+import GraphFunctions
 import DFS
 
 class NonBipartite(Exception):
@@ -61,8 +61,8 @@ def OddCore(G):
     Subgraph of vertices and edges that participate in odd cycles.
     Aka, the union of nonbipartite biconnected components.
     """
-    return Graphs.union(*[C for C in BiconnectedComponents(G)
-                          if not isBipartite(C)])
+    return GraphFunctions.union(*[C for C in BiconnectedComponents(G)
+                                  if not isBipartite(C)])
 
 # If run as "python Bipartite.py", run tests on various small graphs
 # and check that the correct results are obtained.

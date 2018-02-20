@@ -6,7 +6,7 @@ D. Eppstein, April 2004.
 """
 
 import unittest
-from Graphs import isUndirected
+from GraphFunctions import is_undirected
 from Util import arbitrary_item
 from PartialOrder import TopologicalOrder
 
@@ -25,7 +25,7 @@ class BiconnectedComponents(DFS.Searcher):
 
     def __init__(self,G):
         """Search for biconnected components of graph G."""
-        if not isUndirected(G):
+        if not is_undirected(G):
             raise ValueError("BiconnectedComponents: input not undirected graph")
 
         # set up data structures for DFS
@@ -96,7 +96,7 @@ class BiconnectivityTester(DFS.Searcher):
 
     def __init__(self,G):
         """Search for biconnected components of graph G."""
-        if not isUndirected(G):
+        if not is_undirected(G):
             raise NotBiconnected
         self._dfsnumber = {}
         self._low = {}
@@ -140,7 +140,7 @@ class stOrienter(DFS.Searcher):
 
     def __init__(self,G):
         """Relate edges for st-orientation."""
-        if not isUndirected(G):
+        if not is_undirected(G):
             raise ValueError("stOrienter: input not undirected graph")
 
         # set up data structures for DFS

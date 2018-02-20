@@ -10,7 +10,7 @@ import Medium
 from Bipartite import isBipartite
 from UnionFind import UnionFind
 from StrongConnectivity import StronglyConnectedComponents
-from Graphs import isUndirected
+from GraphFunctions import is_undirected
 import unittest
 
 def PartialCubeEdgeLabeling(G):
@@ -29,7 +29,7 @@ def PartialCubeEdgeLabeling(G):
     """
     
     # Some simple sanity checks
-    if not isUndirected(G):
+    if not is_undirected(G):
         raise Medium.MediumError("graph is not undirected")
     L = list(StronglyConnectedComponents(G))
     if len(L) != 1:

@@ -11,7 +11,7 @@ D. Eppstein, November 2003.
 
 import unittest
 from LexBFS import LexBFS
-from Graphs import isUndirected
+from GraphFunctions import is_undirected
 
 def PerfectEliminationOrdering(G):
     """Return a perfect elimination ordering, or raise an exception if not chordal.
@@ -37,7 +37,7 @@ def PerfectEliminationOrdering(G):
 
 def Chordal(G):
     """Test if a given graph is chordal."""
-    if not isUndirected(G):
+    if not is_undirected(G):
         raise ValueError("Input to Chordal is not an undirected graph")
     try:
         PerfectEliminationOrdering(G)
